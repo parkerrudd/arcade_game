@@ -1,0 +1,117 @@
+.gamepage {
+  color: green;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#b3deef), to(#87CEEB));
+  background-image: linear-gradient(#b3deef, #87CEEB);
+  height: 100vh;
+}
+
+.cloud.one {
+  top: 20%;
+  width: 75px;
+  height: 25px;
+}
+
+.cloud.two {
+  top: 30%;
+  width: 24px;
+  height: 8px;
+  -webkit-animation-duration: 17s;
+          animation-duration: 17s;
+}
+
+.cloud.three {
+  top: 10%;
+  width: 60px;
+  height: 20px;
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s;
+}
+
+.cloud {
+  position: absolute;
+  left: 0;
+  background: white;
+  border-radius: 1000px;
+  -webkit-animation: floating 10s infinite linear;
+          animation: floating 10s infinite linear;
+}
+
+.cloud::before {
+  content: '';
+  position: absolute;
+  top: -80%;
+  left: 10%;
+  width: 50%;
+  height: 150%;
+  background: white;
+  border-radius: 50%;
+}
+
+.cloud::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: 20%;
+  width: 30%;
+  height: 100%;
+  background: white;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes floating {
+  from {
+    left: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    left: 100%;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes floating {
+  from {
+    left: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    left: 100%;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+.platform {
+  position: fixed;
+  width: 20vw;
+  height: 5vh;
+  background-color: brown;
+  border-radius: 10px;
+}
+
+.platform.one {
+  bottom: 30%;
+  right: 20%;
+}
+
+.platform.two {
+  bottom: 30%;
+  left: 20%;
+}
+
+.platform.three {
+  bottom: 60%;
+  left: 40%;
+}
+
+.ground {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 10vh;
+  background-color: green;
+}
+/*# sourceMappingURL=styles.css.map */

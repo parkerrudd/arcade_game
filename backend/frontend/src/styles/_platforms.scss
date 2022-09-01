@@ -1,0 +1,22 @@
+.platform {
+    position: fixed;
+    width: 20vw;
+    height: 5vh;
+    background-color: brown;
+    border-radius: 10px;
+}
+
+.platform.one {
+    bottom: 30%;
+    right: 20%;
+}
+
+.platform.two {
+    bottom: 30%;
+    left: 20%;
+}
+
+.platform.three {
+    bottom: 60%;
+    left: 40%;
+}
