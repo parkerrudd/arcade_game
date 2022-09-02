@@ -4,9 +4,9 @@ function Clouds() {
 
     return (
         <div className="clouds"> 
-            <div class="cloud one"></div>
-            <div class="cloud two"></div>
-            <div class="cloud three"></div>
+            <div className="cloud one"></div>
+            <div className="cloud two"></div>
+            <div className="cloud three"></div>
         </div>
     )
 }

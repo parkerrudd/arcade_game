@@ -1,0 +1,20 @@
+.player {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-color: grey;
+    bottom: 10%;
+    right: 40%;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 10%
+    }
+    50% {
+        bottom: 40%
+    }
+    0% {
+        bottom: 10%
+    }
+}

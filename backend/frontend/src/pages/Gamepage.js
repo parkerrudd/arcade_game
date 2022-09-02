@@ -2,6 +2,7 @@ import React from "react";
 import Clouds from "../components/Clouds";
 import Ground from "../components/Ground";
 import Platforms from "../components/Platforms";
+import Player from "../components/Player";
 
 function Gamepage() {
 
@@ -10,7 +11,7 @@ function Gamepage() {
             <Clouds /> 
             <Platforms /> 
             <Ground />
-            {/* <Player /> */}
+            <Player />
         </div>  
     )
 }
