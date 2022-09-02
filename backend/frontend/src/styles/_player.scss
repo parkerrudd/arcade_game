@@ -1,10 +1,14 @@
 .player {
     position: fixed;
-    width: 40px;
-    height: 40px;
-    background-color: grey;
-    bottom: 10%;
-    right: 40%;
+    width: 1px;
+    height: 1px;
+    scale: (200);
+    background-image: url('../images/arcade_knight-removebg-preview.png');
+    object-fit: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 8%;
+    left: 10%;
 }
 
 @keyframes jump {

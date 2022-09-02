@@ -1,0 +1,22 @@
+.enemies {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    scale: (200);
+    background-image: url('../images/enemy_knight-removebg-preview.png');
+    object-fit: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 8%;
+    right: 0%;
+    animation: enemySlide 5s infinite linear;
+}
+
+@keyframes enemySlide {
+    from {
+        right: 0%;
+    }
+    to {
+        right: 100%;
+    }
+}
