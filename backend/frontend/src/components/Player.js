@@ -12,12 +12,12 @@ function Player () {
     }
 
     useEffect(() => {
-        document.addEventListener('keypress', keyUp)
+        document.addEventListener('keyup', keyUp)
     }, [])
 
 
     return (
-        <div className="player"  style={{animation: jump}} onKeyUpCapture={keyUp}>
+        <div className="player"  style={{animation: jump}} onKeyUp={keyUp}>
             
         </div>
     )

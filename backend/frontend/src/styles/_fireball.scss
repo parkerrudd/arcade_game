@@ -1,0 +1,49 @@
+.fireball_one {
+    background-image: url('../images/fireball-removebg-preview.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    top: 10%;
+    right: 0%;
+    animation: fireball__one 3s linear infinite;
+}
+
+@keyframes fireball__one {
+    from {
+        top: 10%;
+        right: 0%;
+    }
+    to {
+        top: 85%;
+        right: 60%;
+    }
+}
+
+.fireball_two {
+    background-image: url('../images/fireball-removebg-preview.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    transform: rotate(-40deg);
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    top: 10%;
+    right: 0%;
+    animation: fireball__two 2.5s linear infinite;
+}
+
+@keyframes fireball__two {
+    from {
+        top: 0%;
+        right: 20%;
+    }
+    to {
+        top: 80%;
+        right: 70%;
+    }
+}
+
