@@ -1,25 +1,24 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
+import Context from "../context";
 
 function Enemies() {
-    const [enemyX, setEnemyX] = useState()
-    const [enemyY, setEnemyY] = useState()
+    const { enemyX, updateEnemyX } = useContext(Context);
 
     const enemyRef = useRef()
 
     const getEnemyPosition = ()  => {
         const x = enemyRef.current.offsetLeft
-            setEnemyX(x)
+        updateEnemyX(x)
         const y = enemyRef.current.offsetTop
-            setEnemyY(y)
-        return x
     }
 
-    // useEffect(() => {
-    //     window.setInterval(() => {
-    //         getEnemyPosition()
-    //     }, 10)
-    //     console.log(getEnemyPosition());
-    // }, [getEnemyPosition])
+    useEffect(() => {
+        window.setInterval(() => {
+            getEnemyPosition()
+        }, 10)
+        // getEnemyPosition()
+        // console.log(enemyX);
+    }, [getEnemyPosition])
     
 
 
