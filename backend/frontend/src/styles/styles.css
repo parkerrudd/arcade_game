@@ -194,6 +194,8 @@
   position: fixed;
   width: 100px;
   height: 100px;
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
   -o-object-fit: contain;
      object-fit: contain;
   top: 10%;

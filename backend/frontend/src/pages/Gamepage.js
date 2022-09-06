@@ -15,7 +15,7 @@ function Gamepage() {
             <Ground />
             <Player />
             <Enemies />
-            <Fireball />
+            {/*<Fireball /> */}
         </div>  
     )
 }
