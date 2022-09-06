@@ -3,7 +3,7 @@ import Context from "../context";
 
 function Player () {
 
-    const { playerX, updatePlayerX } = useContext(Context)
+    const { playerX, playerY, updatePlayer } = useContext(Context)
 
     const [jump, setJump] = useState('')
     const playerRef = useRef()
@@ -22,15 +22,15 @@ function Player () {
 
     const getPlayerPosition = () => {
         const x = playerRef.current.offsetLeft
-        updatePlayerX(x)
         const y = playerRef.current.offsetTop
+        updatePlayer(x, y)
     }
 
     useEffect(() => {
         setInterval(() => {
             getPlayerPosition()
         }, 10);
-        // console.log(playerX)
+        console.log(playerY)
     }, [getPlayerPosition])
 
 

@@ -3,17 +3,21 @@ import { createContext, useState } from "react";
 const Context = createContext()
 
 export const ContextProvider = ({children}) => {
-    const [enemyX, setEnemyX] = useState(0)
-    const [playerX, setPlayerX] = useState(0)
+    const [enemyX, setEnemyX] = useState()
+    const [enemyY, setEnemyY] = useState()
+    const [playerX, setPlayerX] = useState()
+    const [playerY, setPlayerY] = useState()
 
-    const updateEnemyX = (x) => {
+    const updateEnemy = (x, y) => {
         setEnemyX(x)
+        setEnemyY(y)
     }
-    const updatePlayerX = (x) => {
+    const updatePlayer = (x, y) => {
         setPlayerX(x)
+        setPlayerY(y)
     }
     return (
-        <Context.Provider value={{enemyX, updateEnemyX, playerX, updatePlayerX}}>
+        <Context.Provider value={{enemyX, updateEnemy, playerX, updatePlayer}}>
             {children}
         </Context.Provider>
     )

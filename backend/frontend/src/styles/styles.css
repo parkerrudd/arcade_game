@@ -165,8 +165,6 @@
   background-repeat: no-repeat;
   bottom: 8%;
   right: 0%;
-  -webkit-animation: enemySlide 5s infinite linear;
-          animation: enemySlide 5s infinite linear;
 }
 
 @-webkit-keyframes enemySlide {
