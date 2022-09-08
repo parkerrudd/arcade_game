@@ -3,7 +3,7 @@ import Context from "../context";
 
 function Enemies() {
     const [animation, setAnimation] = useState('enemySlide 5s infinite linear')
-    const { playerX, enemyX, enemyY, updateEnemy } = useContext(Context);
+    const { playerX, playerY, enemyX, enemyY, updateEnemy, inPlay, setInPlay } = useContext(Context);
 
     const enemyRef = useRef()
 
@@ -17,11 +17,11 @@ function Enemies() {
         window.setInterval(() => {
             getEnemyPosition()
         }, 1)
-        // getEnemyPosition()
-        // console.log(enemyY);
-        // console.log(animation)
-        if (enemyX >= 74 && enemyX <= 80) {
+
+        if (enemyX >= playerX - 10 && enemyX <= playerX + 10 && enemyY >= playerY - 10 && enemyY <= playerY + 10) {
             setAnimation('none')
+            setInPlay(false)
+            console.log(inPlay);
         }
     }, [getEnemyPosition])
 

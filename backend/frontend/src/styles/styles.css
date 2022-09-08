@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 .gamepage {
   color: green;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#b3deef), to(#87CEEB));
@@ -261,5 +262,22 @@
     top: 80%;
     right: 70%;
   }
+}
+
+.timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+  width: 100vw;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3em;
 }
 /*# sourceMappingURL=styles.css.map */

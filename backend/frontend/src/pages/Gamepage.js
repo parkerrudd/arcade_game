@@ -5,6 +5,7 @@ import Platforms from "../components/Platforms";
 import Player from "../components/Player";
 import Enemies from "../components/Enemies";
 import Fireball from "../components/Fireball";
+import Timer from "../components/Timer";
 import Context from "../context";
 
 function Gamepage() {
@@ -17,7 +18,8 @@ function Gamepage() {
 
     return (
         <div className="gamepage">
-            <Clouds /> 
+            {/*<Clouds /> */}
+            <Timer />
             <Platforms /> 
             <Ground />
             <Player />
