@@ -18,13 +18,13 @@ function Gamepage() {
 
     return (
         <div className="gamepage">
-            {/*<Clouds /> */}
+            <Clouds /> 
             <Timer />
             <Platforms /> 
             <Ground />
             <Player />
             <Enemies />
-            {/*<Fireball /> */}
+           {/* <Fireball /> */}
         </div>  
     )
 }

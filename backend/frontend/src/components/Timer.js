@@ -3,15 +3,16 @@ import Context from "../context";
 
 function Timer() {
 
-    const {time, updateTime, inPlay} = useContext(Context)
+    const {time, setTime, inPlay} = useContext(Context)
 
     useEffect(() => {
         const timer = setInterval(() => {
-            updateTime()
+            setTime(time + 1)
         }, 1000);
 
-        if (!inPlay) clearInterval(timer)
-
+        if (!inPlay) {
+            clearInterval(timer)
+        }
         return () => clearInterval(timer)
     }, [time])
 

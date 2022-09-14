@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState, useContext } from "react";
 import Context from "../context";
 
 function Enemies() {
-    const [animation, setAnimation] = useState('enemySlide 5s infinite linear')
+    const [animation, setAnimation] = useState('enemySlide 3s infinite linear')
+    const [left, setLeft] = useState('')
     const { playerX, playerY, enemyX, enemyY, updateEnemy, inPlay, setInPlay } = useContext(Context);
 
     const enemyRef = useRef()
@@ -18,10 +19,10 @@ function Enemies() {
             getEnemyPosition()
         }, 1)
 
-        if (enemyX >= playerX - 10 && enemyX <= playerX + 10 && enemyY >= playerY - 10 && enemyY <= playerY + 10) {
+        if (enemyX >= playerX - 20 && enemyX <= playerX + 20 && enemyY >= playerY - 20 && enemyY <= playerY + 20) {
             setAnimation('none')
             setInPlay(false)
-            console.log(inPlay);
+            setLeft(enemyX)
         }
     }, [getEnemyPosition])
 
@@ -29,7 +30,7 @@ function Enemies() {
 
 
     return (
-        <div className="enemies" style={{animation: animation}} ref={enemyRef}> 
+        <div className="enemies" style={{animation: animation, left: left}} ref={enemyRef}> 
         </div>
     )
 }

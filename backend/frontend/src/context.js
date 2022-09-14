@@ -8,12 +8,7 @@ export const ContextProvider = ({children}) => {
     const [playerX, setPlayerX] = useState()
     const [playerY, setPlayerY] = useState()
     const [inPlay, setInPlay] = useState(true)
-
     const [time, setTime] = useState(0)
-
-    const updateTime = () => {
-        setTime(time + 1)
-    }
 
     const updateEnemy = (x, y) => {
         setEnemyX(x)
@@ -25,8 +20,8 @@ export const ContextProvider = ({children}) => {
     }
 
     return (
-        <Context.Provider value={{enemyX, updateEnemy, playerX, updatePlayer, playerY, enemyY, time, updateTime,
-        inPlay, setInPlay}}>
+        <Context.Provider value={{enemyX, updateEnemy, playerX, updatePlayer, playerY, enemyY, time, setTime, 
+            inPlay, setInPlay}}>
             {children}
         </Context.Provider>
     )
