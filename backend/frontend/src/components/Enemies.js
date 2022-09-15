@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import Context from "../context";
 
-function Enemies() {
-    const [animation, setAnimation] = useState('enemySlide 3s infinite linear')
+function Enemies({ seconds }) {
+    const [animation, setAnimation] = useState(`enemySlide ${seconds}s infinite linear`)
     const [left, setLeft] = useState('')
     const { playerX, playerY, enemyX, enemyY, updateEnemy, inPlay, setInPlay } = useContext(Context);
 

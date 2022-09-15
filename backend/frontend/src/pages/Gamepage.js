@@ -10,11 +10,7 @@ import Context from "../context";
 
 function Gamepage() {
 
-    const { enemyX, playerX } = useContext(Context)
-    
-    // useEffect(() => {
-    //     if (enemyX === playerX) alert('you lose')
-    // }, [playerX, enemyX])
+    const { enemyX, playerX, time } = useContext(Context)
 
     return (
         <div className="gamepage">
@@ -23,8 +19,10 @@ function Gamepage() {
             <Platforms /> 
             <Ground />
             <Player />
-            <Enemies />
-           {/* <Fireball /> */}
+            <Enemies seconds={4} />
+            { time > 15 ? <Enemies seconds={3} /> : null }
+            { time > 30 ? <Fireball /> : null }
+           
         </div>  
     )
 }
