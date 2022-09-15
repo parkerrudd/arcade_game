@@ -7,6 +7,10 @@ export const ContextProvider = ({children}) => {
     const [enemyY, setEnemyY] = useState()
     const [playerX, setPlayerX] = useState()
     const [playerY, setPlayerY] = useState()
+    const [fireballX, setFireballX] = useState()
+    const [fireballY, setFireballY] = useState()
+    const [platformLeftX, setPlatformLeftX] = useState()
+    const [platformLeftY, setPlatformLeftY] = useState()
     const [inPlay, setInPlay] = useState(true)
     const [time, setTime] = useState(0)
 
@@ -19,9 +23,19 @@ export const ContextProvider = ({children}) => {
         setPlayerY(y)
     }
 
+    const updateFireball = (x, y) => {
+        setFireballX(x)
+        setFireballY(y)
+    }
+
+    const updatePlatformLeft = (x, y) => {
+        setPlatformLeftX(x)
+        setPlatformLeftY(y)
+    }
+
     return (
         <Context.Provider value={{enemyX, updateEnemy, playerX, updatePlayer, playerY, enemyY, time, setTime, 
-            inPlay, setInPlay}}>
+            inPlay, setInPlay, fireballX, fireballY, updateFireball, platformLeftX, platformLeftY, updatePlatformLeft}}>
             {children}
         </Context.Provider>
     )

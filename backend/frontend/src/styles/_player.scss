@@ -7,8 +7,7 @@
     object-fit: contain;
     background-size: contain;
     background-repeat: no-repeat;
-    bottom: 8%;
-    // left: 100px;
+    // bottom: 8%;
 }
 
 @keyframes jump {
@@ -20,5 +19,17 @@
     }
     0% {
         bottom: 10%
+    }
+}
+
+@keyframes jumpPlatformLow {
+    0% {
+        bottom: 33%
+    }
+    50% {
+        bottom: 65%
+    }
+    0% {
+        bottom: 33%
     }
 }

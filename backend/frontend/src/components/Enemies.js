@@ -22,6 +22,9 @@ function Enemies({ seconds }) {
         if (enemyX >= playerX - 20 && enemyX <= playerX + 20 && enemyY >= playerY - 20 && enemyY <= playerY + 20) {
             setAnimation('none')
             setInPlay(false)
+        }
+
+        if (!inPlay) {
             setLeft(enemyX)
         }
     }, [getEnemyPosition])

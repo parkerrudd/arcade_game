@@ -1,12 +1,13 @@
-import React, { useEffect, useState, useRef, useContext, useCallback } from "react";
+import React, { useEffect, useState, useRef, useContext, useCallback, useMemo } from "react";
 import Context from "../context";
 
 function Player () {
 
-    const { playerX, playerY, updatePlayer} = useContext(Context)
+    const { playerX, playerY, updatePlayer, paltformLeftX, platformLeftY} = useContext(Context)
 
     const [jump, setJump] = useState('')
     const [left, setLeft] = useState(100)
+    const [bottom, setBottom] = useState('8%')
     const pixelDistance = 20
     const playerRef = useRef()
 
@@ -20,6 +21,11 @@ function Player () {
         setInterval(() => {
             getPlayerPosition()
         }, 1);
+
+        if (playerY >= platformLeftY - 300 && playerY <= platformLeftY + 300 && playerY != undefined && platformLeftY != undefined) {
+                // setJump('jumpPlatformLow .75s')
+                setBottom('33%')
+        }
     }, [getPlayerPosition])
 
     const move = useCallback((direction) => {
@@ -36,7 +42,11 @@ function Player () {
     const onKeyPress = useCallback((e) => {
         switch(e.keyCode) {
             case 38: 
-                setJump('jump 1s')
+                if (bottom === '8%'){ 
+                    setJump('jump .75s')
+                } else if (bottom === '33%') {
+                    setJump('jumpPlatformLow .75s')
+                }
                 setTimeout(() => {
                     setJump('')
                 }, 1000)
@@ -48,7 +58,7 @@ function Player () {
                 move('right')
                 break
         }
-    }, [move])
+    }, [move, bottom])
 
     useEffect(() => {
         document.addEventListener('keydown', onKeyPress)
@@ -57,10 +67,8 @@ function Player () {
         }
     }, [onKeyPress])
 
-
-
     return (
-        <div className="player" ref={playerRef}  style={{animation: jump, left: `${left}px`}} >
+        <div className="player" ref={playerRef}  style={{animation: jump, left: `${left}px`, bottom: bottom}} >
             
         </div>
     )
