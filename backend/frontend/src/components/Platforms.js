@@ -3,22 +3,24 @@ import Context from "../context";
 
 function Platforms() {
 
-    const { platformLeftX, platformLeftY, updatePlatformLeft } = useContext(Context)
+    const { platformLeftX, platformLeftY, updatePlatformLeft, playerX } = useContext(Context)
 
-    const platformRef = useRef()
+    const platformLeftRef = useRef()
+    const platformHighRef = useRef()
+
 
     useEffect(() => {
-        const x = platformRef.current.offsetLeft
-        const y = platformRef.current.offsetTop
+        const x = platformLeftRef.current.offsetLeft
+        const y = platformLeftRef.current.offsetTop
         updatePlatformLeft(x, y)
-        console.log(platformLeftY);
-    }, [])
+        console.log(platformHighRef.current.offsetTop)
+    }, [platformLeftY, playerX])
 
     return (
         <div className="platforms">
-            <div className="platform one" ref={platformRef}></div>
-            <div className="platform two"></div>
-            <div className="platform three"></div>
+            <div className="platform one"></div>
+            <div className="platform two" ref={platformLeftRef}></div>
+            <div className="platform three" ref={platformHighRef}></div>
         </div>
     )
 }

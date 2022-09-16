@@ -1,13 +1,14 @@
-import React, { useEffect, useState, useRef, useContext, useCallback, useMemo } from "react";
+import React, { useEffect, useState, useRef, useContext, useCallback } from "react";
 import Context from "../context";
 
 function Player () {
 
-    const { playerX, playerY, updatePlayer, paltformLeftX, platformLeftY} = useContext(Context)
+    const { playerX, playerY, updatePlayer, platformLeftX, platformLeftY} = useContext(Context)
 
     const [jump, setJump] = useState('')
     const [left, setLeft] = useState(100)
     const [bottom, setBottom] = useState('8%')
+
     const pixelDistance = 20
     const playerRef = useRef()
 
@@ -22,11 +23,18 @@ function Player () {
             getPlayerPosition()
         }, 1);
 
-        if (playerY >= platformLeftY - 300 && playerY <= platformLeftY + 300 && playerY != undefined && platformLeftY != undefined) {
-                // setJump('jumpPlatformLow .75s')
-                setBottom('33%')
+        if (playerY >= platformLeftY - 20 && playerY <= platformLeftY + 20 
+            && playerX >= platformLeftX + 5 && playerX <= platformLeftX * 2
+            || playerY >= platformLeftY - 20 && playerY <= platformLeftY + 20 
+            && playerX >= platformLeftX * 3 && playerX <= platformLeftX * 4) {
+            setBottom('33%')
+        } else if (playerY <= (platformLeftY / 2) && playerX >= (platformLeftX * 2) && playerX <= platformLeftX * 3) {
+            setBottom('63%')
+        } else if (playerX <= platformLeftX || playerX >= platformLeftX * 4 || playerY >= (platformLeftY / 2) && playerX >= platformLeftX * 2
+        && playerX <= platformLeftX * 3) {
+           setBottom('8%')
         }
-    }, [getPlayerPosition])
+    }, [getPlayerPosition, playerX])
 
     const move = useCallback((direction) => {
         switch (direction) {

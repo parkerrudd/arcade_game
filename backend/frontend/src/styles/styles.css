@@ -88,6 +88,7 @@
 .platform {
   position: fixed;
   width: 20vw;
+  min-width: 150px;
   height: 5vh;
   background-color: brown;
   border-radius: 10px;
@@ -157,7 +158,7 @@
     bottom: 33%;
   }
   50% {
-    bottom: 65%;
+    bottom: 69%;
   }
   0% {
     bottom: 33%;
@@ -169,10 +170,28 @@
     bottom: 33%;
   }
   50% {
-    bottom: 65%;
+    bottom: 69%;
   }
   0% {
     bottom: 33%;
+  }
+}
+
+@-webkit-keyframes fallFromPlatformLow {
+  0% {
+    bottom: 33%;
+  }
+  100% {
+    bottom: 8%;
+  }
+}
+
+@keyframes fallFromPlatformLow {
+  0% {
+    bottom: 33%;
+  }
+  100% {
+    bottom: 8%;
   }
 }
 

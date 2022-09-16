@@ -20,7 +20,7 @@ function Gamepage() {
             <Ground />
             <Player />
             <Enemies seconds={4} /> 
-            { time >= 10 ? <Enemies seconds={2.5} /> : null }
+            {/* time >= 10 ? <Enemies seconds={2.5} /> : null */}
             { time >= 20 ? <Fireball width={100} height={100} animation={'fireball__one'} /> : null }
             { time >= 30 ? <Fireball width={80} height={80} animation={'fireball__two'} /> : null }
            

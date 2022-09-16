@@ -27,9 +27,18 @@
         bottom: 33%
     }
     50% {
-        bottom: 65%
+        bottom: 69%
     }
     0% {
         bottom: 33%
+    }
+}
+
+@keyframes fallFromPlatformLow {
+    0% {
+        bottom: 33%
+    }
+    100% {
+        bottom: 8% 
     }
 }
