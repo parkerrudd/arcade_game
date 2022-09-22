@@ -28,13 +28,18 @@ function Player () {
             || playerY >= platformLeftY - 20 && playerY <= platformLeftY + 20 
             && playerX >= platformLeftX * 3 && playerX <= platformLeftX * 4) {
             setBottom('33%')
-        } else if (playerY <= (platformLeftY / 2) && playerX >= (platformLeftX * 2) && playerX <= platformLeftX * 3) {
-            setBottom('63%')
-        } else if (playerX <= platformLeftX || playerX >= platformLeftX * 4 || playerY >= (platformLeftY / 2) && playerX >= platformLeftX * 2
-        && playerX <= platformLeftX * 3) {
+        } else if (
+                playerX <= platformLeftX 
+                || playerX >= platformLeftX * 4 
+                || playerY >= (platformLeftY / 2) 
+                && playerX >= platformLeftX * 2
+                && playerX <= platformLeftX * 3) {
            setBottom('8%')
-        }
-    }, [getPlayerPosition, playerX])
+        } else if (playerY <= (platformLeftY / 2) && playerX >= platformLeftX * 2 && playerX <= platformLeftX * 3) {
+            setBottom('63%')
+            console.log('up top')
+        } 
+    }, [getPlayerPosition, playerX, playerY])
 
     const move = useCallback((direction) => {
         switch (direction) {
@@ -54,6 +59,8 @@ function Player () {
                     setJump('jump .75s')
                 } else if (bottom === '33%') {
                     setJump('jumpPlatformLow .75s')
+                } else if (bottom === '63%') {
+                    setJump('jumpPlatformHigh .75s')
                 }
                 setTimeout(() => {
                     setJump('')
@@ -77,7 +84,6 @@ function Player () {
 
     return (
         <div className="player" ref={playerRef}  style={{animation: jump, left: `${left}px`, bottom: bottom}} >
-            
         </div>
     )
 }

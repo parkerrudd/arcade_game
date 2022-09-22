@@ -10,6 +10,10 @@ function Fireball({ width, height, animation }) {
 
     const fireballRef = useRef()
 
+    useEffect(() => {
+        setLeft(Math.random() * (800 - 1) + 1)
+    }, [])
+
     const getFireballPosition = () => {
         const x = fireballRef.current.offsetLeft
         const y = fireballRef.current.offsetTop

@@ -13,7 +13,6 @@ function Platforms() {
         const x = platformLeftRef.current.offsetLeft
         const y = platformLeftRef.current.offsetTop
         updatePlatformLeft(x, y)
-        console.log(platformHighRef.current.offsetTop)
     }, [platformLeftY, playerX])
 
     return (

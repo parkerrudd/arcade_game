@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Clouds from "../components/Clouds";
 import Ground from "../components/Ground";
 import Platforms from "../components/Platforms";
@@ -21,8 +21,12 @@ function Gamepage() {
             <Player />
             <Enemies seconds={4} /> 
             {/* time >= 10 ? <Enemies seconds={2.5} /> : null */}
-            { time >= 20 ? <Fireball width={100} height={100} animation={'fireball__one'} /> : null }
-            { time >= 30 ? <Fireball width={80} height={80} animation={'fireball__two'} /> : null }
+            { time >= 15 ? <Fireball width={100} height={100} animation={'fireball__one'} /> : null }
+            { time >= 20 ? <Fireball width={80} height={80} animation={'fireball__two'} /> : null }
+            { time >= 30 ? <Fireball width={50} height={50} animation={'fireball__two'} /> : null }
+            { time >= 30 ? <Fireball width={50} height={60} animation={'fireball__two'} /> : null }
+            { time >= 40 ? <Fireball width={60} height={60} animation={'fireball__two'} /> : null }
+            { time >= 40 ? <Fireball width={70} height={70} animation={'fireball__two'} /> : null }
            
         </div>  
     )
